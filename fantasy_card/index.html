@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111315">
+  <title>Digital Contact Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="stage">
+    <div class="intro"><span class="eyebrow">INTERACTIVE CONTACT CARD</span>
+      <h1>Connect & explore</h1>
+      <p>Tap the flip control to switch between my profile and contact card.</p>
+    </div>
+    <div class="perspective">
+      <div class="flip-shell" id="card">
+        <section class="face profile" aria-label="Profile">
+          <div class="corner tl">✧</div>
+          <div class="corner tr">✧</div>
+          <div class="corner bl">✧</div>
+          <div class="corner br">✧</div>
+          <header class="face-header"><span class="tiny-mark">✦</span><span class="face-caption"></span><span class="tiny-mark">✦</span></header>
+          <div class="identity-art">
+            <div class="portrait-frame"><span class="sigil-ring ring-outer" aria-hidden="true"></span><span
+                class="sigil-ring ring-inner" aria-hidden="true"></span><span class="sigil-arc arc-top"
+                aria-hidden="true"></span><span class="sigil-arc arc-bottom" aria-hidden="true"></span><span
+                class="sigil-line line-left" aria-hidden="true"></span><span class="sigil-line line-right"
+                aria-hidden="true"></span><span class="sigil-node node-left" aria-hidden="true"></span><span
+                class="sigil-node node-right" aria-hidden="true"></span>
+              <div class="portrait-inner"><img id="identityImage" src="assets/logo.svg" alt="Personal logo"></div><span
+                class="rune r1">✧</span><span class="rune r2">◇</span><span class="rune r3">✦</span><span
+                class="rune r4">✦</span><span class="rune r5">◇</span>
+            </div><button class="swap-button" id="swapIdentity" type="button"
+              aria-label="Switch between photo and logo">⇄</button>
+          </div>
+          <h2 class="person-name" data-name>Brandon Williams</h2>
+          <div class="role" data-role>DEVELOPER · DESIGNER · INTERACTIVE MEDIA</div>
+          <div class="divider-art">✧</div>
+          <p class="tagline" data-tagline>Building immersive experiences<br>through code, design, and creativity.</p>
+          <div class="actions"><a class="action violet" id="saveContact" href="contact.vcf" download><span
+                class="action-icon">♙</span>Save Contact <span class="chevron">›</span></a><a class="action green"
+              id="projectsLink" href="#" target="_blank" rel="noopener"><span class="action-icon">▱</span>View Projects
+              <span class="chevron">›</span></a><a class="action" id="interestsLink" href="#" target="_blank"
+              rel="noopener"><span class="action-icon">◇</span>Interests & Background <span
+                class="chevron">›</span></a><a class="action violet" id="resumeLink" href="#" target="_blank"
+              rel="noopener"><span class="action-icon">▤</span>Résumé / Experience <span class="chevron">›</span></a>
+          </div>
+          <nav class="socials" aria-label="Social links"><a id="githubIcon" aria-label="GitHub" href="#" target="_blank"
+              rel="noopener">GH</a><a id="linkedinIcon" aria-label="LinkedIn" href="#" target="_blank"
+              rel="noopener">in</a><a id="emailIcon" aria-label="Email" href="#">✉</a><a id="websiteIcon"
+              aria-label="Website" href="#" target="_blank" rel="noopener">◎</a></nav>
+          <div class="skills">
+            <div><b>⌘</b><strong>DEVELOPMENT</strong><span>Unity · Unreal · Web<br>Tools · Automation</span></div>
+            <div><b>✎</b><strong>DESIGN</strong><span>UI/UX · 3D · Visuals<br>Worldbuilding</span></div>
+            <div><b>⬡</b><strong>CREATIVE</strong><span>Games · TTRPGs<br>Story · Systems</span></div>
+          </div>
+        </section>
+        <section class="face business" id="businessFace" aria-label="Contact card">
+          <div class="art-background" aria-hidden="true"></div>
+          <div class="business-content">
+            <div class="paper-top"><span class="eyebrow dark">— LET’S CONNECT —</span><span class="ornament">──── ◇
+                ────</span></div>
+            <h2 data-name>Brandon Williams</h2>
+            <p class="business-role" data-role>DEVELOPER · DESIGNER · INTERACTIVE MEDIA</p>
+            <div class="qr-area">
+              <div class="qr-frame"><img id="qrImage" src="assets/qr-placeholder.png"
+                  alt="Demo QR code; configure the public URL before sharing"><img class="qr-logo" src="assets/logo.svg"
+                  alt=""></div>
+              <span class="qr-note" id="qrNote">DEMO QR — REPLACE BEFORE SHARING</span>
+              <span class="scan-title">SCAN TO CONNECT</span>
+              <p>View my profile, save my contact,<br>and explore my work.</p>
+            </div>
+            <div class="contact-list">
+              <a id="businessEmail" href="#"><b aria-hidden="true">✉</b><span>yourname@email.com</span></a>
+              <a id="businessLinkedin" href="#" target="_blank" rel="noopener"><b
+                  aria-hidden="true">in</b><span>linkedin.com/in/yourname</span></a>
+              <a id="businessGithub" href="#" target="_blank" rel="noopener"><b
+                  aria-hidden="true">⌘</b><span>github.com/yourname</span></a>
+              <a id="businessWebsite" href="#" target="_blank" rel="noopener"><b
+                  aria-hidden="true">◎</b><span>yourname.github.io</span></a>
+            </div>
+          </div>
+          <button type="button" class="rail-compass" id="railDownload" title="Download business card PNG"
+            aria-label="Download business card as PNG" aria-describedby="downloadHint"><img class="compass-art"
+              src="assets/compass-button.png" alt="" draggable="false"></button>
+        </section>
+      </div>
+    </div>
+    <p class="download-hint" id="downloadHint">Select the compass on the card’s right edge to download a PNG.</p>
+    <div class="controls"><button type="button" id="flipButton" class="flip-button"
+        aria-label="Flip card"><span>⇄</span> FLIP CARD</button><span class="control-note">Also swipe left or right on
+        the card</span></div>
+    <footer>Made with HTML · CSS · JavaScript · Ready for free GitHub Pages hosting</footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
