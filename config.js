@@ -12,7 +12,7 @@ window.CARD_CONFIG = {
   interests: '', // blank disables the button
   resume: 'https://devilcry3.github.io/Public/ResCov.html', // blank disables the button
   // After publishing, set to your exact GitHub Pages address, then run generate_qr.py.
-  cardUrl: '',
+  cardUrl: 'https://devilcry3.github.io/ContacCard_Profile/',
   photo: 'assets/photo.jpg', // add your photo here; logo displays until the image exists
   logo: 'assets/logo.svg',
   photoSwapSeconds: 7 // automatic photo/logo alternation; set 0 to disable
